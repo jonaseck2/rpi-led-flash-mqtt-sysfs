@@ -1,0 +1,25 @@
+{
+  "name": "rpi-button-flash-sysfs",
+  "version": "1.0.0",
+  "description": "Flashes a led using PWM when a button is pushed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonaseck2/rpi-button-flash-sysfs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonaseck2/rpi-button-flash-sysfs/issues"
+  },
+  "homepage": "https://github.com/jonaseck2/rpi-button-flash-sysfs#readme",
+  "dependencies": {
+    "mqtt": "^2.11.0",
+    "node-gpio": "git://github.com/jonaseck2/node-gpio.git#v1",
+    "sleep": "^5.1.1"
+  }
+}
