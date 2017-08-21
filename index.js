@@ -33,9 +33,9 @@ var led = new PWM(config.led.channel);
 led.open();
 led.frequency = 50;
 led.dutyCycle = 0;
-led.start();
 
 client.on('message', function (topic, message) {
+  led.start();
   for (var flashes = 0; flashes < config.led.num_flashes; flashes++) {
     console.log("flashing")
     for (var i = 0; i < 101; i+=2) {
@@ -47,10 +47,10 @@ client.on('message', function (topic, message) {
       sleep.usleep(config.led.pwm_cycle * 1000000)
     }
   }
+  led.stop();
 });
 
 process.on('SIGINT', function () {
-    led.stop();
     led.close();
     client.end()
     process.exit();
